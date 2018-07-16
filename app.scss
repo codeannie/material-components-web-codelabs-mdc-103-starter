@@ -118,8 +118,8 @@ body {
 }
 
 .product-list {
-  @include mdc-image-list-standard-columns(4);
-
+  @include mdc-image-list-masonry-columns(4);
+  padding: 80px 100px 0 100px;
   overflow: auto;
 }
 
