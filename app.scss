@@ -13,6 +13,8 @@ $mdc-theme-on-background: #442C2E;
 @import "@material/list/mdc-list";
 @import "@material/textfield/mdc-text-field";
 @import "@material/typography/mdc-typography";
+@import "@material/elevation/mdc-elevation";
+
 
 
 html, body {
@@ -106,6 +108,13 @@ body {
   @include mdc-typography(headline6);
   align-self: center;
   margin: 5px auto;
+}
+
+.shrine-body {
+  @include mdc-elevation(4);
+
+  display: block;
+  overflow: auto;
 }
 
 .product-list {
