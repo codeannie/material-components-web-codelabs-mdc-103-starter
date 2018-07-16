@@ -1,11 +1,11 @@
-$mdc-theme-primary: #FEDBD0;
-$mdc-theme-on-primary: #442C2E;
-$mdc-theme-secondary: #FEEAE6;
-$mdc-theme-on-secondary: #442C2E;
-$mdc-theme-surface: #FFFBFA;
-$mdc-theme-on-surface: #442C2E;
-$mdc-theme-background: #FFFFFF;
-$mdc-theme-on-background: #442C2E;
+$mdc-theme-primary: #FFCF44;
+$mdc-theme-on-primary: #33333D;
+$mdc-theme-secondary: #FFCF44;
+$mdc-theme-on-secondary: #FFFFFF;
+$mdc-theme-surface: #33333D;
+$mdc-theme-on-surface: #FFFFFF;
+$mdc-theme-background: #33333D;
+$mdc-theme-on-background: #FFFFFF;
 
 @import "@material/button/mdc-button";
 @import "@material/drawer/mdc-drawer";
@@ -45,12 +45,6 @@ body {
   display: block;
   width: 300px;
   margin: 20px auto;
-  &:not(.mdc-text-field--invalid) {
-    @include mdc-text-field-label-color(on-primary);
-  }
-  &.mdc-text-field--focused:not(.mdc-text-field--invalid)  {
-    @include mdc-text-field-label-color(on-primary);
-  }
 }
 
 .button-container {
@@ -70,18 +64,21 @@ body {
 }
 
 .cancel {
-  @include mdc-button-ink-color(on-primary);
+  @include mdc-button-ink-color(on-surface);
 }
 
 // Home page styles
 
 .home {
   display: flex; // Flexbox is used to easily arrange the persistent drawer and content side-by-side
+  background-color: $mdc-theme-background;
+  color: $mdc-theme-on-background;
 }
 
 .shrine-drawer {
-  @include mdc-drawer-fill-color-accessible(primary);
-  @include mdc-drawer-ink-color(on-primary);
+  @include mdc-drawer-fill-color-accessible(surface);
+  @include mdc-drawer-ink-color(on-surface);
+  border-right-width: 0;
 
   text-transform: uppercase;
 
@@ -90,7 +87,7 @@ body {
   }
 
   .mdc-list-item {
-    @include mdc-list-item-primary-text-ink-color(on-primary);
+    @include mdc-list-item-primary-text-ink-color(on-surface);
 
     border-radius: 6px;
     justify-content: center;
@@ -124,6 +121,7 @@ body {
 }
 
 .shrine-select-item-divider {
+  @include mdc-theme-prop(border-bottom-color, primary);
   border-bottom-color: #EAA4A4;
   width: 50px;
   margin: 0 auto;
