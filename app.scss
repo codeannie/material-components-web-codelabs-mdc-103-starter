@@ -12,6 +12,8 @@ $mdc-theme-on-background: #442C2E;
 @import "@material/image-list/mdc-image-list";
 @import "@material/list/mdc-list";
 @import "@material/textfield/mdc-text-field";
+@import "@material/typography/mdc-typography";
+
 
 html, body {
   height: 100%;
@@ -101,6 +103,7 @@ body {
 }
 
 .shrine-title {
+  @include mdc-typography(headline6);
   align-self: center;
   margin: 5px auto;
 }
